@@ -1,13 +1,14 @@
 'use client';
 
 import { TabelaFipeContext } from '@/app/context/TabelaFipeContext';
+import { useFetchVechicle } from '@/app/hooks/useVehicle';
 import { BrandsSelect, ModelsSelect, YearsSelect } from '@components/index';
 import { Button, Paper, Typography } from '@mui/material';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 export const ContentContainer = () => {
   const { inputValues } = useContext(TabelaFipeContext);
-  const [dataVechicle, setDataVechicle] = useState(null);
+  const { data, loading, error, fetchData } = useFetchVechicle(inputValues.brand, inputValues.model, inputValues.year);
 
   return (
     <>
@@ -38,9 +39,16 @@ export const ContentContainer = () => {
             textTransform: 'none',
             backgroundColor: '#5d00bf',
           }}
+          onClick={fetchData}
         >
           Consultar Preço
         </Button>
+
+        {data && (
+          <Typography variant="h3" gutterBottom color={'#424242'}>
+            {data?.CodigoFipe}
+          </Typography>
+        )}
       </Paper>
     </>
   );
