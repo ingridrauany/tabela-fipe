@@ -1,12 +1,13 @@
 'use client';
 
+import { TabelaFipeContext } from '@/app/context/TabelaFipeContext';
 import { BrandsSelect, ModelsSelect, YearsSelect } from '@components/index';
-import { TabelaFipeContext } from '@context/TabelaFipeContext';
-import { Badge, CircularProgress, Paper, Typography } from '@mui/material';
-import { useContext } from 'react';
+import { Button, Paper, Typography } from '@mui/material';
+import { useContext, useState } from 'react';
 
 export const ContentContainer = () => {
-  const { loader } = useContext(TabelaFipeContext);
+  const { inputValues } = useContext(TabelaFipeContext);
+  const [dataVechicle, setDataVechicle] = useState(null);
 
   return (
     <>
@@ -20,25 +21,26 @@ export const ContentContainer = () => {
         elevation={1}
         sx={{
           width: '40%',
-
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+          alignItems: 'center',
           padding: '40px',
         }}
       >
-        <Badge
-          overlap="circular"
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          badgeContent={!loader ? <CircularProgress size={68} style={{ color: 'green' }} /> : undefined}
+        <BrandsSelect />
+        <ModelsSelect />
+        <YearsSelect />
+        <Button
+          variant="contained"
+          disabled={inputValues.brand !== '' && inputValues.model !== '' && inputValues.year !== '' ? false : true}
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '20px',
-            alignItems: 'center',
+            textTransform: 'none',
+            backgroundColor: '#5d00bf',
           }}
         >
-          <BrandsSelect />
-          <ModelsSelect />
-          <YearsSelect />
-        </Badge>
+          Consultar Preço
+        </Button>
       </Paper>
     </>
   );
