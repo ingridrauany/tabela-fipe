@@ -9,7 +9,7 @@ export const BrandsSelect = () => {
   const { data, isError, error } = useFetchBrands<Brand[]>();
   const { inputValues, handleInputChange } = useContext(TabelaFipeContext);
 
-  if (isError) return <div>Sorry There was an Error: {error.message}</div>;
+  if (isError) return <div>Ouve um erro ao buscar as Marcas: {error.message}</div>;
 
   return (
     <FormControl sx={{ minWidth: '300px' }}>

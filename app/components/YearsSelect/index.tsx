@@ -7,8 +7,10 @@ import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { useContext } from 'react';
 
 export const YearsSelect = () => {
-  const { inputValues, setLoader, handleInputChange } = useContext(TabelaFipeContext);
-  const { data, isLoading, isError, error } = useFetchYears(inputValues.brand, inputValues.model);
+  const { inputValues, handleInputChange } = useContext(TabelaFipeContext);
+  const { data, isError, error } = useFetchYears(inputValues.brand, inputValues.model);
+
+  if (isError) return <div>Ouve um erro ao buscar as Anos: {error.message}</div>;
 
   return (
     <FormControl sx={{ minWidth: '300px' }}>

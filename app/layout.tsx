@@ -1,9 +1,10 @@
+import '@styles/global.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import { ClientLayout } from './components/index';
 
 const roboto = Roboto({
-  weight: ['400', '700'],
+  weight: ['300', '400', '500', '700', '900'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',

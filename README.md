@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Busca de dados na Tabela FIPE
 
-## Getting Started
+## Sumário
 
-First, run the development server:
+- [Overview](#overview)
+  - [O desafio](#o-desafio)
+  - [Executando a aplicação](#executando-a-aplicação)
+  - [Testes](#testes)
+- [Meu processo](#meu-processo)
+  - [Estrutura de pastas](#estrutura-de-pastas)
+  - [Construído com](#construido-com)
+  - [Próximos passos](#próximos-passos)
+  - [Links](#Links)
+
+## Overview
+
+### O desafio
+
+Cria uma tela que busque dados da Tabela Fipe utilizando a seguinte [API](https://deividfortuna.github.io/fipe/).
+
+### Executando a aplicação
+
+Primeiro baixe os pacotes da aplicação:
+
+```bash
+npm install
+```
+
+Depois execute o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:300](http://localhost:3000) com seu navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Testes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Para executar os testes automatizados:
 
-## Learn More
+```bash
+npm run test
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Meu processo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Estrutura de pastas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+├── app
+│   ├── components
+│   ├── context
+│   ├── hooks
+│   ├── services
+│   ├── types
+│   ├── page.tsx
+│   └── layout.tsx
+├── public
+├── package.json
+└── README.md
+```
 
-## Deploy on Vercel
+### Construído com:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- HTML semântico
+- Flexbox/Grid Layout
+- React/Typescript
+- [NextJS](https://nextjs.org/)
+- `Editorconfig`, `prettier` e `eslint` para formatação e linter de código
+- [React Query](https://tanstack.com/query/latest): para lidar com as chamadas aos endpoint (lidando melhor com loading e erros)
+- [Jest](https://jestjs.io/pt-BR/) e [Testing Library](https://testing-library.com/): para escrita de teste unitários
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Próximos passos
+
+- Escrever testes para os componentes e hooks
+- Usar algum tipo de componente de `Loading` que impeça o usuário de tentar acessar o `select` enquanto eles ainda tem os dados preenchidos pela API
+- Utilizar `Styled-Components` junto ao `Material UI` para deixar o estilo separado do código do componente
+
+### Links

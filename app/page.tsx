@@ -10,7 +10,7 @@ export default async function Home() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
+        minHeight: '100vh',
       }}
     >
       <ContentContainer />
