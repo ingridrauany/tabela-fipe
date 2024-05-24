@@ -12,7 +12,7 @@ export const BrandsSelect = () => {
   if (isError) return <div>Ouve um erro ao buscar as Marcas: {error.message}</div>;
 
   return (
-    <FormControl sx={{ minWidth: '300px' }}>
+    <FormControl sx={{ minWidth: '200px' }}>
       <InputLabel id="demo-simple-select-label">Marca</InputLabel>
       <Select
         labelId="marca-label"

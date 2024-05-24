@@ -13,7 +13,7 @@ export const ModelsSelect = () => {
   if (isError) return <div>Ouve um erro ao buscar os Modelos: {error.message}</div>;
 
   return (
-    <FormControl sx={{ minWidth: '300px' }}>
+    <FormControl sx={{ minWidth: '200px' }}>
       <InputLabel id="demo-simple-select-label">Modelo</InputLabel>
       <Select
         labelId="demo-simple-select-label"

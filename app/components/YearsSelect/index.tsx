@@ -13,7 +13,7 @@ export const YearsSelect = () => {
   if (isError) return <div>Ouve um erro ao buscar as Anos: {error.message}</div>;
 
   return (
-    <FormControl sx={{ minWidth: '300px' }}>
+    <FormControl sx={{ minWidth: '200px' }}>
       <InputLabel id="demo-simple-select-label">Ano</InputLabel>
       <Select
         labelId="demo-simple-select-label"
