@@ -8,7 +8,9 @@ import { useContext } from 'react';
 
 export const ContentContainer = () => {
   const { inputValues } = useContext(TabelaFipeContext);
-  const { data, fetchData } = useFetchVechicle(inputValues.brand, inputValues.model, inputValues.year);
+  const { data, fetchData, isError, error } = useFetchVechicle(inputValues.brand, inputValues.model, inputValues.year);
+
+  if (isError) return <div>Ouve um erro ao buscar o preço do veículo: {error.message}</div>;
 
   return (
     <>
