@@ -11,6 +11,8 @@ export default async function Home() {
         flexDirection: 'column',
         alignItems: 'center',
         minHeight: '100vh',
+        padding: '20px',
+        boxSizing: 'border-box',
       }}
     >
       <ContentContainer />
