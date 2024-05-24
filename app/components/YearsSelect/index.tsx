@@ -1,8 +1,8 @@
 'use client';
 
 import { useFetchYears } from '@/app/hooks/useYears';
+import { Year } from '@/app/types/Years';
 import { TabelaFipeContext } from '@context/TabelaFipeContext';
-import { Year } from '@customTypes/Years';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { useContext } from 'react';
 

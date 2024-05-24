@@ -6,7 +6,7 @@ import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { useContext } from 'react';
 
 export const BrandsSelect = () => {
-  const { data, isError, error } = useFetchBrands<Brand[]>();
+  const { data, isError, error } = useFetchBrands();
   const { inputValues, handleInputChange } = useContext(TabelaFipeContext);
 
   if (isError) return <div>Ouve um erro ao buscar as Marcas: {error.message}</div>;

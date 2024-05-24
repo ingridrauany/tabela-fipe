@@ -1,19 +1,25 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next",
-    "prettier",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+  "plugins": ["react"],
+  "extends": ["eslint:recommended", "next", "next/core-web-vitals", "plugin:react/recommended"],
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
   ],
-  "plugins": ["react", "@typescript-eslint"],
-  "parserOptions": {
-    "ecmaVersion": 2021,
-    "sourceType": "module"
-  },
   "rules": {
-    "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react-refresh/only-export-components": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ]
   }
 }

@@ -47,7 +47,7 @@ export const tabelaFipeReducer = (state: InputState, action: InputAction): Input
 
 interface TabelaFipeContextValue {
   inputValues: InputState;
-  handleInputChange: (name: string, value: string) => void;
+  handleInputChange: (_name: string, _value: string) => void;
 }
 
 const defaultValue: TabelaFipeContextValue = {
